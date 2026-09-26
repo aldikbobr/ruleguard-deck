@@ -3,14 +3,14 @@
   "order": [
     "cover",
     "problem",
-    "top-spreads",
-    "sample",
-    "pipeline",
-    "solana",
-    "competition",
-    "business",
-    "roadmap",
-    "close"
+    "scale",
+    "competitors",
+    "demo",
+    "usecases",
+    "traction",
+    "whynow",
+    "team",
+    "roadmap"
   ],
   "faces": {
     "space-grotesk": {

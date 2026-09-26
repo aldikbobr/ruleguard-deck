@@ -33,7 +33,19 @@ const localAssets = html => html.replace(/\/_blob\/[0-9a-f]{32}/g, blob => {
   if (!assets[blob]) throw new Error(`No local file for ${blob}: add it to src/assets.json`);
   return assets[blob];
 });
-const slides = deck.order.map(id => localAssets(stripNotes(fs.readFileSync(path.join(src, "slides", `${id}.html`), "utf8"))));
+// <x-icon> is a Claude Slides element; on the static page it becomes an inline SVG in the same color and size
+const ICONS = {
+  Check: '<path d="M20 6 9 17l-5-5"/>',
+  CheckCircle: '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+  Warning: '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+  Search: '<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>',
+  Link: '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>'
+};
+const icons = html => html.replace(/<x-icon name="(\w+)"(?: style="([^"]*)")?><\/x-icon>/g, (_, name, style = "") => {
+  if (!ICONS[name]) throw new Error(`No SVG for <x-icon name="${name}">: add it to ICONS in build.mjs`);
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="${style}">${ICONS[name]}</svg>`;
+});
+const slides = deck.order.map(id => icons(localAssets(stripNotes(fs.readFileSync(path.join(src, "slides", `${id}.html`), "utf8")))));
 const fonts = Object.values(deck.faces).map(f => `<link rel="stylesheet" href="${f.href}">`).join("\n");
 const icon = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E1726"/><path d="M18 34l9 9 19-21" fill="none" stroke="#F08A3C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 
