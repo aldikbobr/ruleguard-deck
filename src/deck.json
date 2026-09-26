@@ -1,0 +1,29 @@
+{
+  "title": "RuleGuard — Pitch Deck",
+  "order": [
+    "cover",
+    "problem",
+    "top-spreads",
+    "sample",
+    "pipeline",
+    "solana",
+    "competition",
+    "business",
+    "roadmap",
+    "close"
+  ],
+  "faces": {
+    "space-grotesk": {
+      "family": "Space Grotesk",
+      "href": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap"
+    },
+    "ibm-plex-sans": {
+      "family": "IBM Plex Sans",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    },
+    "ibm-plex-mono": {
+      "family": "IBM Plex Mono",
+      "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap"
+    }
+  }
+}
