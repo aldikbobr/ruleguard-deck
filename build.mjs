@@ -16,7 +16,8 @@ const stripNotes = html => html.replace(/\s*<aside>[\s\S]*?<\/aside>/g, "").trim
 const from = process.argv[2];
 if (from) {
   const deck = JSON.parse(fs.readFileSync(path.join(from, "deck.json"), "utf8"));
-  fs.rmSync(src, { recursive: true, force: true });
+  // replace the slides only; src/assets.json (the image map) is kept
+  fs.rmSync(path.join(src, "slides"), { recursive: true, force: true });
   fs.mkdirSync(path.join(src, "slides"), { recursive: true });
   fs.writeFileSync(path.join(src, "deck.json"), JSON.stringify({ title: deck.title, order: deck.order, faces: deck.faces }, null, 2) + "\n");
   for (const id of deck.order) {
@@ -25,7 +26,14 @@ if (from) {
 }
 
 const deck = JSON.parse(fs.readFileSync(path.join(src, "deck.json"), "utf8"));
-const slides = deck.order.map(id => stripNotes(fs.readFileSync(path.join(src, "slides", `${id}.html`), "utf8")));
+// Images uploaded to the Slides artifact are referenced as /_blob/<id>; src/assets.json maps them to files in this repo
+const assetsFile = path.join(src, "assets.json");
+const assets = fs.existsSync(assetsFile) ? JSON.parse(fs.readFileSync(assetsFile, "utf8")) : {};
+const localAssets = html => html.replace(/\/_blob\/[0-9a-f]{32}/g, blob => {
+  if (!assets[blob]) throw new Error(`No local file for ${blob}: add it to src/assets.json`);
+  return assets[blob];
+});
+const slides = deck.order.map(id => localAssets(stripNotes(fs.readFileSync(path.join(src, "slides", `${id}.html`), "utf8"))));
 const fonts = Object.values(deck.faces).map(f => `<link rel="stylesheet" href="${f.href}">`).join("\n");
 const icon = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0E1726"/><path d="M18 34l9 9 19-21" fill="none" stroke="#F08A3C" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 

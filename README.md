@@ -15,4 +15,6 @@ node build.mjs                 # rebuild index.html from src/
 node build.mjs <project dir>   # import deck.json + slides/ from an exported deck (speaker notes are removed), then rebuild
 ```
 
-Commit and push `index.html` and `src/`. GitHub Pages serves the `main` branch root.
+Images uploaded to the Slides deck appear as `/_blob/<id>`. Map each one to a file in `assets/` in `src/assets.json`, and the build stops if a mapping is missing.
+
+Commit and push `index.html`, `src/` and `assets/`. GitHub Pages serves the `main` branch root.

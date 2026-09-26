@@ -79,6 +79,7 @@
     </div>
   </div>
   <p id="4bb8ca34" style="position:absolute; top:128px; left:128px; width:1664px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#f08a3c">Colosseum · Crypto World's Fair 2026</p>
+  <img src="assets/logo.png" alt="RuleGuard logo: a shield with two equal rule lines and a check mark" style="position:absolute; top:236px; left:128px; width:120px; height:120px; object-fit:contain">
   <p id="f49c3cf7" style="position:absolute; top:918px; left:128px; width:1664px; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793a8">Kalshi · Polymarket · Limitless · Manifold → Solana</p>
   <h1 id="008f147a" style="position:absolute; top:381px; left:128px; width:1040px; height:180px; font-family:'Space Grotesk', Arial, sans-serif; font-size:180px; font-weight:700; line-height:1; letter-spacing:-4px; color:#f4f1ea">RuleGuard</h1>
   <h2 id="567253e6" style="position:absolute; top:593px; left:128px; width:1040px; font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; font-weight:500; line-height:1.2; color:#b7c1d1">The rule-equivalence layer for prediction markets</h2>
@@ -105,7 +106,7 @@
     <p style="font-size:24px; color:#8793A8; white-space:nowrap">01 Problem · 02</p>
   </div>
 </section>
-<section id="top-spreads" data-transition="fade" style="background:#F4F1EA; color:#475063; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<section id="top-spreads" data-transition="fade" style="background:#F4F1EA; color:#475063; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
   <div style="display:flex; flex-direction:column; gap:16px">
     <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#A34E0E">Our first scan · 67 Kalshi ↔ Polymarket pairs</p>
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px; color:#0E1726">Top 5 spreads: 5 different contracts</h2>
@@ -119,6 +120,10 @@
     <tr><td>4.9¢</td><td>Nvidia has the top AI model</td><td>Same split as Meta</td></tr>
   </table>
   <p style="font-size:32px; line-height:1.4; color:#0E1726">A spread scanner ranks all five as its best trades. <b>Each one is a rule difference, not a mispricing.</b></p>
+  <div style="background:#0E1726; border-radius:20px; padding:28px 36px; display:flex; align-items:center; gap:32px">
+    <p style="flex:none; font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#0E1726; background:#F08A3C; padding:8px 20px; border-radius:999px; white-space:nowrap">LIVE · SEP 26</p>
+    <p style="flex:1; font-size:28px; line-height:1.4; color:#F4F1EA">“Bitcoin reaches $86k, Sep 21–27”: <b>Limitless has already settled YES</b>. Polymarket counts only from its launch on Sep 23, and there YES still trades at 8¢.</p>
+  </div>
   <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between; gap:32px; font-family:'IBM Plex Mono', 'Courier New', monospace">
     <p style="font-size:24px; color:#636978">Scan of Sep 25, 2026 · raw spread from asks, before fees · spreads moved; rules did not</p>
     <p style="font-size:24px; color:#636978; white-space:nowrap">01 Problem · 03</p>
@@ -274,22 +279,23 @@
     <p style="font-size:24px; color:#8793A8; white-space:nowrap">02 Product · 06</p>
   </div>
 </section>
-<section id="competition" data-transition="fade" style="background:#F4F1EA; color:#475063; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+<section id="competition" data-transition="fade" style="background:#F4F1EA; color:#475063; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
   <div style="display:flex; flex-direction:column; gap:16px">
     <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#A34E0E">Competition</p>
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px; color:#0E1726">Scanners stop at the price</h2>
   </div>
   <table style="font-size:26px; color:#0E1726">
-    <tr style="background:#E9E4D8"><th style="width:24%">Tool</th><th style="width:40%">What it does</th><th style="width:36%">Compares the rules?</th></tr>
-    <tr><td>Prediction Hunt</td><td>7 venues, fee-adjusted spreads, alerts</td><td>Leaves it to the user</td></tr>
-    <tr><td>ArbBets, Predictions Terminal, Claw Arbs</td><td>Scanners, execution, whale tracking</td><td>Not clause by clause, as far as we found</td></tr>
-    <tr><td>Apify verifier</td><td>Flags different sources and close times over 6 h apart</td><td>Source and timing only; says other clauses aren't checked</td></tr>
-    <tr><td>pmxt, PolyRouter</td><td>Unified API and market matching</td><td>No rule analysis found</td></tr>
-    <tr><td>Capitola</td><td>Meta-aggregator for the best price</td><td>A potential customer, not a competitor</td></tr>
-    <tr style="background:#0E1726"><td style="color:#F4F1EA">RuleGuard</td><td style="color:#F4F1EA">Clause-by-clause comparison plus divergence scenarios, via API and on-chain</td><td style="color:#F4F1EA">Yes — that is the product</td></tr>
+    <tr style="background:#E9E4D8"><th style="width:30%">Tool</th><th style="width:14%">Price gaps</th><th style="width:14%">Source &amp; timing</th><th style="width:14%">Clause by clause</th><th style="width:14%">Divergence scenario</th><th style="width:14%">On-chain verdict</th></tr>
+    <tr><td>Prediction Hunt</td><td style="color:#1F5BB5">Yes</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td></tr>
+    <tr><td>ArbBets, Predictions Terminal, Claw Arbs</td><td style="color:#1F5BB5">Yes</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td></tr>
+    <tr><td>Apify arbitrage verifier</td><td style="color:#1F5BB5">Yes</td><td style="color:#1F5BB5">Yes</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td></tr>
+    <tr><td>pmxt, PolyRouter (unified APIs)</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td></tr>
+    <tr><td>Capitola (best-price router)</td><td style="color:#1F5BB5">Yes</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td><td style="color:#636978">—</td></tr>
+    <tr style="background:#0E1726"><td style="color:#F4F1EA">RuleGuard</td><td style="color:#8DB8F5">Yes</td><td style="color:#8DB8F5">Yes</td><td style="color:#8DB8F5">Yes</td><td style="color:#8DB8F5">Yes</td><td style="color:#8DB8F5">Yes · devnet</td></tr>
   </table>
+  <p style="font-size:28px; line-height:1.4; color:#0E1726">Routers like Capitola are <b>customers, not competitors</b>: before they send an order to the cheaper venue, they need to know it's the same contract.</p>
   <div style="position:absolute; left:128px; right:128px; bottom:64px; display:flex; justify-content:space-between; gap:32px; font-family:'IBM Plex Mono', 'Courier New', monospace">
-    <p style="font-size:24px; color:#636978">Based on public product pages, checked Sep 25, 2026</p>
+    <p style="font-size:24px; color:#636978">Yes = offered · — = not found on public product pages, checked Sep 25, 2026</p>
     <p style="font-size:24px; color:#636978; white-space:nowrap">03 Competition · 07</p>
   </div>
 </section>
@@ -306,7 +312,7 @@
       <hr style="border-top:1px solid #E2DDD2">
       <p style="font-size:24px; line-height:1.4; color:#475063">Full pair feed, rule-change alerts, SLA</p>
       <div style="flex:1"></div>
-      <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; font-weight:600; color:#0E1726">[$__/mo]</p>
+      <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; font-weight:600; color:#0E1726">After pilots</p>
     </div>
     <div style="flex:1; background:#FBFAF6; border:2px solid #A34E0E; border-radius:20px; padding:32px; display:flex; flex-direction:column; gap:12px">
       <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#A34E0E">PAID · PRIMARY</p>
@@ -315,7 +321,7 @@
       <hr style="border-top:1px solid #E2DDD2">
       <p style="font-size:24px; line-height:1.4; color:#475063">Verdicts, scenarios, “equivalent only” filter</p>
       <div style="flex:1"></div>
-      <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; font-weight:600; color:#0E1726">[$__/mo]</p>
+      <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:44px; font-weight:600; color:#0E1726">After pilots</p>
     </div>
     <div style="flex:1; background:#FBFAF6; border:1px solid #E2DDD2; border-radius:20px; padding:32px; display:flex; flex-direction:column; gap:12px">
       <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; color:#1F5BB5">FREE · CHANNEL</p>
@@ -388,21 +394,21 @@
       <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#F08A3C">30+</p>
       <div style="flex:1; display:flex; flex-direction:column; gap:4px">
         <p style="font-size:24px; line-height:1.4; color:#F4F1EA">Telegram subscribers</p>
-        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: [__]</p>
+        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: starting</p>
       </div>
     </div>
     <div style="flex:1; display:flex; align-items:center; gap:16px">
       <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#F08A3C">2–3</p>
       <div style="flex:1; display:flex; flex-direction:column; gap:4px">
         <p style="font-size:24px; line-height:1.4; color:#F4F1EA">teams trying the API</p>
-        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: [__]</p>
+        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: starting</p>
       </div>
     </div>
     <div style="flex:1; display:flex; align-items:center; gap:16px">
       <p style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1; color:#F08A3C">3+</p>
       <div style="flex:1; display:flex; flex-direction:column; gap:4px">
         <p style="font-size:24px; line-height:1.4; color:#F4F1EA">traders with a real rule loss</p>
-        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: [__]</p>
+        <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#8793A8">Now: starting</p>
       </div>
     </div>
   </div>
@@ -412,7 +418,13 @@
   </div>
 </section>
 <section id="close" data-transition="fade" style="background:#F08A3C; color:#0E1726; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px; display:flex; flex-direction:column; justify-content:space-between">
-  <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#0E1726">Team · contact</p>
+  <div style="display:flex; justify-content:space-between; align-items:center; gap:32px">
+    <div style="display:flex; align-items:center; gap:20px">
+      <img src="assets/logo.png" alt="RuleGuard logo" style="width:72px; height:72px; object-fit:contain">
+      <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; letter-spacing:2px; text-transform:uppercase; color:#0E1726">Team · contact</p>
+    </div>
+    <p style="font-family:'IBM Plex Mono', 'Courier New', monospace; font-size:24px; color:#0E1726">Information, not financial advice</p>
+  </div>
   <div style="display:flex; flex-direction:column; gap:16px">
     <h2 style="font-family:'Space Grotesk', Arial, sans-serif; font-size:72px; font-weight:700; line-height:1.1; letter-spacing:-1px; color:#0E1726">Same title. Different contract.</h2>
     <p style="font-size:32px; line-height:1.4; color:#0E1726">RuleGuard checks the rules before you trade.</p>
@@ -437,9 +449,9 @@
       </div>
     </div>
   </div>
-  <div style="display:flex; justify-content:space-between; gap:32px; font-family:'IBM Plex Mono', 'Courier New', monospace">
-    <p style="font-size:24px; color:#0E1726">github.com/aldikbobr/ruleguard · [email]</p>
-    <p style="font-size:24px; color:#0E1726">Information, not financial advice</p>
+  <div style="display:flex; gap:48px; font-family:'IBM Plex Mono', 'Courier New', monospace">
+    <p style="font-size:24px; color:#0E1726"><b>Deck</b> aldikbobr.github.io/ruleguard-deck</p>
+    <p style="font-size:24px; color:#0E1726"><b>Demo</b> claude.ai/artifact/B61ZXiuoWxCx1THjtmREUC</p>
   </div>
 </section>
 </div>
